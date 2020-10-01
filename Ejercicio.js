@@ -7,15 +7,12 @@ let cities = ["miami", "barcelona", "madrid", "amsterdam", "berlin", "sao paulo"
 
 
 //ES5 =>
-
-
-
+const upperCasedCities = cities.map(function(city){
+  return city.charAt(0).toUpperCase() + city.slice(1);
+})
 
 //ES6 =>
-
-
-
-
+const upperCasedCities = cities.map( city => city.charAt(0).toUpperCase() + city.slice(1) );
 
 
 
@@ -89,12 +86,21 @@ const students = [
 
 
 //ES5 =>
-
-
-
+const gradedStudents = students.map(function(student){
+  let finalGrade = Math.round(((student.firstProject+student.secondProject/2)*0.4 + student.finalExam*0.6));
+  return {
+    name: student.name,
+    finalGrade: finalGrade
+  }
+});
 
 //ES6 =>
-
+const gradedStudents = students.map( student => {
+  return {
+  name: student.name,
+  fnalGrade: Math.round(( (student.firstProject+student.secondProject)/2)*0.4 + student.finalExam*0.6)
+  }
+})
 
 
 
